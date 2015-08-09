@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 int foo_s; /// Interface source
-int *foo;  /// Interface pointer
+int *foo NOEXPORT;  /// Interface pointer
 
 struct plugin_data {
 	void *handle;

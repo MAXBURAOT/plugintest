@@ -27,7 +27,7 @@ plugins: plugin1.$(PLUGINEXT) plugin2.$(PLUGINEXT)
 	$(CC) -DPLUGINEXT=$(PLUGINEXT) $(CFLAGS) $(EXTRACFLAGS) -g -rdynamic -fPIC -shared -o $@ pluginadd.c $<
 
 %: %.c %.h
-	$(CC) -DPLUGINEXT=$(PLUGINEXT) $(CFLAGS) $(EXTRACFLAGS) -g -o $@ $<
+	$(CC) -DPLUGINEXT=$(PLUGINEXT) $(CFLAGS) $(EXTRACFLAGS) -g -rdynamic -o $@ $<
 
 run:
 	./main plugin1 plugin2 >output.txt

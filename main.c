@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 int foo_s; /// Interface source
-int *foo NOEXPORT;  /// Interface pointer
+int *foo;  /// Interface pointer
 
 struct plugin_data {
 	void *handle;
@@ -17,7 +17,7 @@ struct plugin_data {
  * Symbol importer. Called by plugins, it returns a pointer to the requested
  * interface (here we have only one, foo).
  */
-void *plugin_import_symbol(void)
+HPMEXPORT void *plugin_import_symbol(void)
 {
 	return foo;
 }

@@ -24,10 +24,10 @@ core: main
 plugins: plugin1.$(PLUGINEXT) plugin2.$(PLUGINEXT)
 
 %.$(PLUGINEXT): %.c $(HEADERS)
-	$(CC) -DPLUGINEXT=$(PLUGINEXT) $(CFLAGS) $(EXTRACFLAGS) -g -rdynamic -fPIC -shared -o $@ pluginadd.c $<
+	$(CC) -DPLUGINEXT=$(PLUGINEXT) $(CFLAGS) $(EXTRACFLAGS) -fvisibility=hidden -g -rdynamic -fPIC -shared -o $@ pluginadd.c $<
 
 %: %.c %.h
-	$(CC) -DPLUGINEXT=$(PLUGINEXT) $(CFLAGS) $(EXTRACFLAGS) -g -rdynamic -o $@ $<
+	$(CC) -DPLUGINEXT=$(PLUGINEXT) $(CFLAGS) $(EXTRACFLAGS) -fvisibility=hidden -g -rdynamic -o $@ $<
 
 run:
 	./main plugin1 plugin2 >output.txt

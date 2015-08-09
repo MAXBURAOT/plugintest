@@ -1,0 +1,13 @@
+main exports
+00000000006013e0 b foo
+00000000006013e8 b foo_s
+00000000004009e6 T plugin_import_symbol
+00000000004009f3 t printfoo
+plugin1 exports
+0000000000200bf0 b foo
+00000000000007c4 T HPM_shared_symbols
+0000000000200bf8 B import_symbol
+plugin2 exports
+0000000000200bf0 b foo
+00000000000007c4 T HPM_shared_symbols
+0000000000200bf8 B import_symbol

@@ -9,7 +9,7 @@
  * address retrieved from the core. It matches the exported interfaces from the
  * core, in order to use the same syntax inside the plugin.
  */
-int *foo NOEXPORT;
+int *foo;
 
 void fun2(void);
 
@@ -17,7 +17,7 @@ void fun2(void);
  * This function is a test-case against FreeBSD mixing up functions with the
  * same name in core and plugin.
  */
-void fun(void)
+HPMEXPORT void fun(void)
 {
 	printf("This is fun from "PLUGINNAME"\n");
 	if (foo)

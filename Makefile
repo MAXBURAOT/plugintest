@@ -24,7 +24,7 @@ core: main
 plugins: plugin1.$(PLUGINEXT) plugin2.$(PLUGINEXT)
 
 %.$(PLUGINEXT): %.c $(HEADERS)
-	$(CC) -DPLUGINEXT=$(PLUGINEXT) $(CFLAGS) $(EXTRACFLAGS) -g -rdynamic -fPIC -shared -o $@ $<
+	$(CC) -DPLUGINEXT=$(PLUGINEXT) $(CFLAGS) $(EXTRACFLAGS) -g -rdynamic -fPIC -shared -o $@ pluginadd.c $<
 
 %: %.c %.h
 	$(CC) -DPLUGINEXT=$(PLUGINEXT) $(CFLAGS) $(EXTRACFLAGS) -g -o $@ $<

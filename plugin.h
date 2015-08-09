@@ -2,12 +2,9 @@
 #include <dlfcn.h>
 #include <stdbool.h>
 
-/**
- * This is a static variable, global to the plugin, to store the interface
- * address retrieved from the core. It matches the exported interfaces from the
- * core, in order to use the same syntax inside the plugin.
- */
-static int *foo;
+#define NOEXPORT __attribute__((visibility ("hidden")))
+
+extern int *foo;
 
 /**
  * Function pointer to the symbol importer in the core. This function returns a

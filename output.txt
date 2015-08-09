@@ -7,12 +7,16 @@ Plugin plugin2.so loaded.
 Plugin: plugin1
 This is fun from plugin1
 (plugin1) foo++: 2.
-(main) foo++: 3.
+This is fun2
+foo++: 3.
+(main) foo++: 4.
 --------------
 Plugin: plugin2
 This is fun from plugin2
-(plugin2) foo++: 4.
-(main) foo++: 5.
+(plugin2) foo++: 5.
+This is fun2
+foo++: 6.
+(main) foo++: 7.
 --------------
 This is fun from main.
-(main) foo++: 6.
+(main) foo++: 8.

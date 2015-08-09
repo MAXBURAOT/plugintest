@@ -1,0 +1,18 @@
+This is fun from main.
+(main) foo++: 1.
+--------------
+Plugin plugin1.so loaded.
+Plugin plugin2.so loaded.
+--------------
+Plugin: plugin1
+This is fun from plugin1
+(plugin1) foo++: 2.
+(main) foo++: 3.
+--------------
+Plugin: plugin2
+This is fun from plugin2
+(plugin2) foo++: 4.
+(main) foo++: 5.
+--------------
+This is fun from main.
+(main) foo++: 6.

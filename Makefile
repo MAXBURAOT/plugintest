@@ -29,5 +29,9 @@ plugins: plugin1.$(PLUGINEXT) plugin2.$(PLUGINEXT)
 %: %.c %.h
 	$(CC) -DPLUGINEXT=$(PLUGINEXT) $(CFLAGS) $(EXTRACFLAGS) -g -o $@ $<
 
+run:
+	./main plugin1 plugin2 >output.txt
+	cat output.txt
+
 clean:
 	rm -rf main *.$(PLUGINEXT) *.dSYM *.core

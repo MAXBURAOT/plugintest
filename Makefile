@@ -13,7 +13,7 @@ plugins: plugin1.$(PLUGINEXT) plugin2.$(PLUGINEXT)
 	$(CC) -DPLUGINEXT=$(PLUGINEXT) -g -rdynamic -fPIC -shared -o $@ $<
 
 %: %.c %.h
-	$(CC) -DPLUGINEXT=$(PLUGINEXT) -g -o $@ $<
+	$(CC) -DPLUGINEXT=$(PLUGINEXT) -ldl -g -o $@ $<
 
 clean:
 	rm -rf main *.$(PLUGINEXT) *.dSYM *.core
